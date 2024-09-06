@@ -1,4 +1,4 @@
-VOL_DIR="/var/nfs-mount/ComfyUI-VOL-latest"
+VOL_DIR="$NFS_VOLUME"
 COMFY_DIR="$VOL_DIR/ComfyUI"
 # Check if the ComfyUI directory exists
 if [ ! -d "$COMFY_DIR" ]; then
