@@ -21,8 +21,7 @@ download_file() {
     local header=$3
     local filename=$(basename "$destination")
 
-    if [ -f "$destination" ]; then
-    else
+    if [ ! -f "$destination" ]; then
         if [ -n "$header" ]; then
             wget --header="$header" --progress=bar:force -c -O "$destination" "$url"
         else
@@ -49,5 +48,5 @@ download_file "https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/m
 download_file "https://huggingface.co/autismanon/modeldump/resolve/main/dreamshaper_8.safetensors" "$COMFY_DIR/models/checkpoints/dreamshaper_8.safetensors"
 
 # Download the workflow files
-download_file "https://github.com/rbgo404/ComfyUI-inferless-template/raw/main/workflows/flux_workflow.json" "$VOL_DIR/workflows/flux_workflow.json"
-download_file "https://github.com/rbgo404/ComfyUI-inferless-template/raw/test-comfyui/workflows/sd1-5_workflow.json" "$VOL_DIR/workflows/sd1-5_workflow.json"
+download_file "https://github.com/inferless/ComfyUI-Inferless-template/raw/main/workflows/flux_workflow.json" "$VOL_DIR/workflows/flux_workflow.json"
+download_file "https://github.com/inferless/ComfyUI-Inferless-template/raw/main/workflows/sd1-5_workflow.json" "$VOL_DIR/workflows/sd1-5_workflow.json"
