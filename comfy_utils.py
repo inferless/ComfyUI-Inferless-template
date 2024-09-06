@@ -1,7 +1,5 @@
 import json
 import urllib.request
-import urllib.error
-import logging
 import time
 import subprocess
 import os
