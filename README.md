@@ -30,7 +30,7 @@ Add the `NFS_VOLUME` Volume path and the `HF_TOKEN` Hugging Face access token as
 ### Import the Model in Inferless
 Log in to your inferless account, select the workspace you want the model to be imported into and click the Add Model button.
 
-Select the PyTorch as framework and choose **Repo(custom code)** as your model source and select your provider, and use the forked repo URL as the **Model URL**.
+Select the GitHub as a model provider and choose **Repo(custom code)** as your model source and select the branch.
 
 Enter all the required details to Import your model. Refer [this link](https://docs.inferless.com/integrations/github-custom-code) for more information on model import.
 
