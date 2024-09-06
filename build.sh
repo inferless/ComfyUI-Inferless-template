@@ -31,7 +31,7 @@ download_file() {
 }
 
 # Authorization header for Hugging Face
-AUTH_HEADER="Authorization: Bearer <YOUR_HF_ACCESS_TOKEN>"
+AUTH_HEADER="Authorization: Bearer $HF_ACCESS_TOKEN"
 
 # Download UNET model with authorization header
 download_file "https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/flux1-dev.safetensors" "$COMFY_DIR/models/unet/flux1-dev.safetensors" "$AUTH_HEADER"
