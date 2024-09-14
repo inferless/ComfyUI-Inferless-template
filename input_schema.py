@@ -9,7 +9,7 @@ INPUT_SCHEMA = {
         'datatype': 'STRING',
         'required': True,
         'shape': [1],
-        'example': ["https://raw.githubusercontent.com/inferless/ComfyUI/main/workflows/txt_2_img.json"]
+        'example': ["https://github.com/inferless/ComfyUI-Inferless-template/raw/main/workflows/sd1-5_workflow.json"]
     },
     "negative_prompt": {
         'datatype': 'STRING',
