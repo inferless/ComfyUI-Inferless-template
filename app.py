@@ -26,7 +26,7 @@ class InferlessPythonModel:
         prompt = inputs.get("prompt")
         negative_prompt = inputs.get("negative_prompt")
         workflow_filename = "workflow_api.json"
-        workflow_path = os.path.join(self._data_dir, workflow_filename)
+        workflow_path = os.path.join(self.directory_path, workflow_filename)
         # Process the workflow input
         if workflow_input.startswith('http://') or workflow_input.startswith('https://'):
             response = requests.get(workflow_input)
