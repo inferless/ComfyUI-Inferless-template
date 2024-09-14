@@ -26,7 +26,7 @@ class InferlessPythonModel:
         prompt = inputs.get("prompt")
         negative_prompt = inputs.get("negative_prompt")
         workflow_filename = "workflow_api.json"
-        workflow_path = os.path.join(self.directory_path, workflow_filename)
+        workflow_path = os.path.join(self._data_dir, workflow_filename)
         # Process the workflow input
         if workflow_input.startswith('http://') or workflow_input.startswith('https://'):
             response = requests.get(workflow_input)
@@ -39,7 +39,7 @@ class InferlessPythonModel:
             json.dump(workflow_json, f)
         
         # Load the saved workflow
-        workflow = load_workflow(self._data_dir, workflow_filename)
+        workflow = load_workflow(self.directory_path, workflow_filename)
         prompt = prompt_update_workflow(workflow_filename, workflow, prompt)
         prompt_id = send_comfyui_request(self.ws, prompt, self.server_address, self.client_id)
         file_path = get_img_file_path(self.server_address, prompt_id)
