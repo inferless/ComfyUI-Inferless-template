@@ -5,11 +5,11 @@ INPUT_SCHEMA = {
         'shape': [1],
         'example': ["A cat holding a sign that says hello world"]
     },
-     "workflow_name": {
+     "workflow": {
         'datatype': 'STRING',
         'required': True,
         'shape': [1],
-        'example': ["sd1-5_workflow"]
+        'example': ["https://raw.githubusercontent.com/inferless/ComfyUI/main/workflows/txt_2_img.json"]
     },
     "negative_prompt": {
         'datatype': 'STRING',
