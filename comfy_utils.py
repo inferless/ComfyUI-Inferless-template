@@ -55,8 +55,8 @@ def check_comfyui(server_address,client_id):
             time.sleep(5)
     return ws
 
-def load_workflow(directory_path,workflow_name):
-    with open(f"{directory_path}/workflows/{workflow_name}", 'rb') as file:
+def load_workflow(workflow_path):
+    with open(f"{workflow_path}", 'rb') as file:
         return json.load(file)
 
 def prompt_update_workflow(workflow_name,workflow,prompt,negative_prompt=None):
