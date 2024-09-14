@@ -2,6 +2,8 @@ import subprocess
 import os
 import uuid
 from comfy_utils import run_comfyui_in_background, check_comfyui, load_workflow, prompt_update_workflow, send_comfyui_request, get_img_file_path, image_to_base64, stop_server_on_port, is_comfyui_running
+import requests
+import json
 
 class InferlessPythonModel:
     def initialize(self):
