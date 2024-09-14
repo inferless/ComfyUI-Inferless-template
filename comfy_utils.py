@@ -56,12 +56,12 @@ def check_comfyui(server_address,client_id):
     return ws
 
 def load_workflow(directory_path,workflow_name):
-    with open(f"{directory_path}/workflows/{workflow_name}.json", 'rb') as file:
+    with open(f"{directory_path}/workflows/{workflow_name}", 'rb') as file:
         return json.load(file)
 
 def prompt_update_workflow(workflow_name,workflow,prompt,negative_prompt=None):
     workflow["6"]["inputs"]["text"] = prompt
-    if workflow_name == "sd1-5_workflow":
+    if negative_prompt:
         workflow["7"]["inputs"]["text"]  = negative_prompt
         
     return workflow
