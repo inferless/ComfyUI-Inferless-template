@@ -46,7 +46,3 @@ download_file "https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/m
 
 # Download SD1.5 for workflow-2
 download_file "https://huggingface.co/autismanon/modeldump/resolve/main/dreamshaper_8.safetensors" "$COMFY_DIR/models/checkpoints/dreamshaper_8.safetensors"
-
-# Download the workflow files
-download_file "https://github.com/inferless/ComfyUI-Inferless-template/raw/main/workflows/flux_workflow.json" "$VOL_DIR/workflows/flux_workflow.json"
-download_file "https://github.com/inferless/ComfyUI-Inferless-template/raw/main/workflows/sd1-5_workflow.json" "$VOL_DIR/workflows/sd1-5_workflow.json"
