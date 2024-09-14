@@ -39,7 +39,7 @@ class InferlessPythonModel:
             json.dump(workflow_json, f)
         
         # Load the saved workflow
-        workflow = load_workflow(self.directory_path, workflow_filename)
+        workflow = load_workflow(workflow_path)
         prompt = prompt_update_workflow(workflow_filename, workflow, prompt)
         prompt_id = send_comfyui_request(self.ws, prompt, self.server_address, self.client_id)
         file_path = get_img_file_path(self.server_address, prompt_id)
