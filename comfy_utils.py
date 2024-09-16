@@ -15,8 +15,7 @@ COMFYUI_DIR = f"{os.getenv('NFS_VOLUME')}/ComfyUI"
 def start_comfyui():
     try:
         process = subprocess.Popen(
-            [sys.executable, "main.py"],
-            cwd=COMFYUI_DIR,
+            "comfy launch -- --listen 127.0.0.1 --port 8188",
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True
