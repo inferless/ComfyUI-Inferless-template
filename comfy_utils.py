@@ -10,17 +10,9 @@ import base64
 import requests
 import psutil
 
-COMFYUI_DIR = f"{os.getenv('NFS_VOLUME')}/ComfyUI"
-
 def start_comfyui():
     try:
-        process = subprocess.Popen(
-            "comfy launch -- --listen 127.0.0.1 --port 8188",
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            text=True
-        )
-        
+        process = subprocess.Popen("comfy launch -- --listen 127.0.0.1 --port 8188",shell=True)
         # Wait for a short time to see if the process starts successfully
         time.sleep(5)
         
@@ -102,7 +94,7 @@ def get_img_file_path(server_address,prompt_id):
                 image_outputs.append({"filename": image.get("filename")})
     
     for node_id in image_outputs:
-        file_path = f"{COMFYUI_DIR}/output/{node_id.get('filename')}"
+        file_path = f"/output/{node_id.get('filename')}"
     
     return file_path
 
