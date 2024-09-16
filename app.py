@@ -43,7 +43,7 @@ class InferlessPythonModel:
         prompt = prompt_update_workflow(workflow_filename, workflow, prompt)
         prompt_id = send_comfyui_request(self.ws, prompt, self.server_address, self.client_id)
         file_path = get_img_file_path(self.server_address, prompt_id)
-        image_base64 = image_to_base64(file_path)
+        image_base64 = image_to_base64(self.directory_path+"/ComfyUI"+file_path)
         return {"generated_image_base64": image_base64}
     
     def finalize(self):
