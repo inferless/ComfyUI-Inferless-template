@@ -26,8 +26,8 @@ configuration:
   max_replica: '1'
   min_replica: '0'
   scale_down_delay: '600'
-  region: region-1
-  vcpu: '20'
+  region: region-2
+  vcpu: '20.0'
   ram: '200'
 env:
   # Add your environment variables here
