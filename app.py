@@ -18,7 +18,7 @@ class InferlessPythonModel:
         
         if is_comfyui_running(self.server_address):
             stop_server_on_port(8188)    
-        run_comfyui_in_background()
+        run_comfyui_in_background(self.directory_path+'/ComfyUI')
         self.ws = check_comfyui(self.server_address,self.client_id)
 
     def infer(self, inputs):
