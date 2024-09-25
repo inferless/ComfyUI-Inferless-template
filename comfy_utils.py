@@ -10,9 +10,11 @@ import base64
 import requests
 import psutil
 
-def start_comfyui():
+def start_comfyui(comfyui_path):
     try:
-        process = subprocess.Popen("comfy launch -- --listen 127.0.0.1 --port 8188",shell=True)
+        
+        process = subprocess.Popen(f"comfy --workspace={comfyui_path} launch -- --listen 127.0.0.1 --port 8188",shell=True)
+        # process = subprocess.Popen("comfy launch -- --listen 127.0.0.1 --port 8188",shell=True)
         # Wait for a short time to see if the process starts successfully
         time.sleep(5)
         
@@ -24,9 +26,9 @@ def start_comfyui():
     except Exception as e:
         raise Exception("Error setting up ComfyUI repo") from e
 
-def run_comfyui_in_background():
+def run_comfyui_in_background(comfyui_path):
     def run_server():
-        process = start_comfyui()
+        process = start_comfyui(comfyui_path)
         if process:
             stdout, stderr = process.communicate()
 
