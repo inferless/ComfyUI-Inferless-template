@@ -14,7 +14,6 @@ def start_comfyui(comfyui_path):
     try:
         
         process = subprocess.Popen(f"comfy --skip-prompt --workspace={comfyui_path} launch -- --listen 127.0.0.1 --port 8188",shell=True)
-        # process = subprocess.Popen("comfy launch -- --listen 127.0.0.1 --port 8188",shell=True)
         # Wait for a short time to see if the process starts successfully
         time.sleep(5)
         
